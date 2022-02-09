@@ -18,6 +18,7 @@
 		9D7E676A27B17F43000AFF07 /* VolcanicPanicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E676927B17F43000AFF07 /* VolcanicPanicTests.swift */; };
 		9D7E677427B17F43000AFF07 /* VolcanicPanicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E677327B17F43000AFF07 /* VolcanicPanicUITests.swift */; };
 		9D7E677627B17F43000AFF07 /* VolcanicPanicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E677527B17F43000AFF07 /* VolcanicPanicUITestsLaunchTests.swift */; };
+		9DF53D0C27B18AD200F2A657 /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DF53D0B27B18AD200F2A657 /* Hero.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		9D7E676F27B17F43000AFF07 /* VolcanicPanicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolcanicPanicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7E677327B17F43000AFF07 /* VolcanicPanicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanicPanicUITests.swift; sourceTree = "<group>"; };
 		9D7E677527B17F43000AFF07 /* VolcanicPanicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanicPanicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D7E678427B18614000AFF07 /* VolcanicPanic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VolcanicPanic.entitlements; sourceTree = "<group>"; };
+		9DF53D0B27B18AD200F2A657 /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +105,10 @@
 		9D7E674E27B17F3E000AFF07 /* VolcanicPanic */ = {
 			isa = PBXGroup;
 			children = (
+				9D7E678427B18614000AFF07 /* VolcanicPanic.entitlements */,
 				9D7E674F27B17F3E000AFF07 /* AppDelegate.swift */,
 				9D7E675127B17F3E000AFF07 /* GameScene.sks */,
+				9DF53D0B27B18AD200F2A657 /* Hero.sks */,
 				9D7E675327B17F3E000AFF07 /* Actions.sks */,
 				9D7E675527B17F3E000AFF07 /* GameScene.swift */,
 				9D7E675727B17F3E000AFF07 /* GameViewController.swift */,
@@ -238,6 +243,7 @@
 				9D7E675B27B17F3E000AFF07 /* Main.storyboard in Resources */,
 				9D7E675227B17F3E000AFF07 /* GameScene.sks in Resources */,
 				9D7E675D27B17F42000AFF07 /* Assets.xcassets in Resources */,
+				9DF53D0C27B18AD200F2A657 /* Hero.sks in Resources */,
 				9D7E676027B17F42000AFF07 /* LaunchScreen.storyboard in Resources */,
 				9D7E675427B17F3E000AFF07 /* Actions.sks in Resources */,
 			);
@@ -443,13 +449,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VolcanicPanic/VolcanicPanic.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 883DK65VTV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,6 +469,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rishiN.VolcanicPanic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,13 +481,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VolcanicPanic/VolcanicPanic.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 883DK65VTV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -486,6 +501,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rishiN.VolcanicPanic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

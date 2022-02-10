@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3E029E27B577B800BDDD49 /* GameScenePad.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D3E029D27B577B800BDDD49 /* GameScenePad.sks */; };
 		9D7E675027B17F3E000AFF07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E674F27B17F3E000AFF07 /* AppDelegate.swift */; };
-		9D7E675227B17F3E000AFF07 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E675127B17F3E000AFF07 /* GameScene.sks */; };
+		9D7E675227B17F3E000AFF07 /* GameScenePhone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E675127B17F3E000AFF07 /* GameScenePhone.sks */; };
 		9D7E675427B17F3E000AFF07 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E675327B17F3E000AFF07 /* Actions.sks */; };
 		9D7E675627B17F3E000AFF07 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E675527B17F3E000AFF07 /* GameScene.swift */; };
 		9D7E675827B17F3E000AFF07 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E675727B17F3E000AFF07 /* GameViewController.swift */; };
@@ -39,9 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D3E029D27B577B800BDDD49 /* GameScenePad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePad.sks; sourceTree = "<group>"; };
 		9D7E674C27B17F3E000AFF07 /* VolcanicPanic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolcanicPanic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7E674F27B17F3E000AFF07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D7E675127B17F3E000AFF07 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9D7E675127B17F3E000AFF07 /* GameScenePhone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone.sks; sourceTree = "<group>"; };
 		9D7E675327B17F3E000AFF07 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		9D7E675527B17F3E000AFF07 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		9D7E675727B17F3E000AFF07 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +109,8 @@
 			children = (
 				9D7E678427B18614000AFF07 /* VolcanicPanic.entitlements */,
 				9D7E674F27B17F3E000AFF07 /* AppDelegate.swift */,
-				9D7E675127B17F3E000AFF07 /* GameScene.sks */,
+				9D7E675127B17F3E000AFF07 /* GameScenePhone.sks */,
+				9D3E029D27B577B800BDDD49 /* GameScenePad.sks */,
 				9DF53D0B27B18AD200F2A657 /* Hero.sks */,
 				9D7E675327B17F3E000AFF07 /* Actions.sks */,
 				9D7E675527B17F3E000AFF07 /* GameScene.swift */,
@@ -241,7 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7E675B27B17F3E000AFF07 /* Main.storyboard in Resources */,
-				9D7E675227B17F3E000AFF07 /* GameScene.sks in Resources */,
+				9D7E675227B17F3E000AFF07 /* GameScenePhone.sks in Resources */,
+				9D3E029E27B577B800BDDD49 /* GameScenePad.sks in Resources */,
 				9D7E675D27B17F42000AFF07 /* Assets.xcassets in Resources */,
 				9DF53D0C27B18AD200F2A657 /* Hero.sks in Resources */,
 				9D7E676027B17F42000AFF07 /* LaunchScreen.storyboard in Resources */,

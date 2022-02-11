@@ -44,11 +44,11 @@ class GameViewController: UIViewController {
         }
     }
     
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        get {
-//            return .landscape
-//        }
-//    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .landscape
+        }
+    }
     
     override var shouldAutorotate: Bool {
         return true

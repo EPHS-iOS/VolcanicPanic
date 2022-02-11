@@ -77,10 +77,6 @@ class GameScene: SKScene {
         if(((hero.physicsBody?.velocity.dx)! <= 1) && ((hero.physicsBody?.velocity.dx)! >= -1)){
             hero.physicsBody?.velocity.dx = 0
         }
-//        if(((hero.physicsBody?.velocity.dy)! <= 1) && ((hero.physicsBody?.velocity.dy)! >= -1)){
-//            hero.physicsBody?.velocity.dy = 0
-//        }
-        print(hero.physicsBody?.velocity.dy)
         /* Called before each frame is rendered */
         if(hero.physicsBody?.velocity.dx == 0){
             ind=0

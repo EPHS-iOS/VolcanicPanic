@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D3E029E27B577B800BDDD49 /* GameScenePad.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D3E029D27B577B800BDDD49 /* GameScenePad.sks */; };
+		9D3E02A027B6C47000BDDD49 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3E029F27B6C47000BDDD49 /* Meteor.swift */; };
 		9D7E675027B17F3E000AFF07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E674F27B17F3E000AFF07 /* AppDelegate.swift */; };
 		9D7E675227B17F3E000AFF07 /* GameScenePhone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E675127B17F3E000AFF07 /* GameScenePhone.sks */; };
 		9D7E675427B17F3E000AFF07 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E675327B17F3E000AFF07 /* Actions.sks */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		9D3E029D27B577B800BDDD49 /* GameScenePad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePad.sks; sourceTree = "<group>"; };
+		9D3E029F27B6C47000BDDD49 /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		9D7E674C27B17F3E000AFF07 /* VolcanicPanic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolcanicPanic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7E674F27B17F3E000AFF07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7E675127B17F3E000AFF07 /* GameScenePhone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone.sks; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				9DF53D0B27B18AD200F2A657 /* Hero.sks */,
 				9D7E675327B17F3E000AFF07 /* Actions.sks */,
 				9D7E675527B17F3E000AFF07 /* GameScene.swift */,
+				9D3E029F27B6C47000BDDD49 /* Meteor.swift */,
 				9D7E675727B17F3E000AFF07 /* GameViewController.swift */,
 				9D7E675927B17F3E000AFF07 /* Main.storyboard */,
 				9D7E675C27B17F42000AFF07 /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 				9D7E675627B17F3E000AFF07 /* GameScene.swift in Sources */,
 				9D7E675827B17F3E000AFF07 /* GameViewController.swift in Sources */,
 				9D7E675027B17F3E000AFF07 /* AppDelegate.swift in Sources */,
+				9D3E02A027B6C47000BDDD49 /* Meteor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,9 +460,10 @@
 				CODE_SIGN_ENTITLEMENTS = VolcanicPanic/VolcanicPanic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 883DK65VTV;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -471,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rishiN.VolcanicPanic;
+				PRODUCT_BUNDLE_IDENTIFIER = ephs2022.volcanicPanic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -488,9 +493,10 @@
 				CODE_SIGN_ENTITLEMENTS = VolcanicPanic/VolcanicPanic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 883DK65VTV;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -503,7 +509,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rishiN.VolcanicPanic;
+				PRODUCT_BUNDLE_IDENTIFIER = ephs2022.volcanicPanic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

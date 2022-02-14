@@ -11,6 +11,7 @@ class GameScene: SKScene {
     var upButton: SKSpriteNode!
     var ind=0
     var walkSprites :[SKTexture] = [SKTexture]()
+    var meteor=Meteor(pos: CGPoint(x: 500,y: UIScreen.main.bounds.height), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-3))
 //    var background = SKSpriteNode(imageNamed: "background")
     
     override func didMove(to view: SKView) {
@@ -18,6 +19,9 @@ class GameScene: SKScene {
 //        background.setScale(CGFloat(5))
 //        background.zPosition = -100
 //        self.addChild(background)
+        
+//        meteor=Meteor(pos: CGPoint(x: 500,y: 500), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-50))
+        self.addChild(meteor)
         hero = (self.childNode(withName: "//hero") as! SKSpriteNode)
         rightButton = (self.childNode(withName: "//right") as! SKSpriteNode)
         leftButton = (self.childNode(withName: "//left") as! SKSpriteNode)
@@ -53,7 +57,7 @@ class GameScene: SKScene {
                 hero.physicsBody?.velocity=CGVector(dx: -200, dy: (hero.physicsBody?.velocity.dy)!)
             }
             if (upButton.contains(pointOfTouch)){
-                if (((hero.physicsBody?.velocity.dy)!<=0.1)&&((hero.physicsBody?.velocity.dy)! >= -0.1)){
+                if (((hero.physicsBody?.velocity.dy)!<=0.2)&&((hero.physicsBody?.velocity.dy)! >= -0.2)){
                     hero.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 900))
                 }
             }
@@ -65,10 +69,14 @@ class GameScene: SKScene {
         for touch in touches {
             let pointOfTouch=touch.location(in: self)
             if (rightButton.contains(pointOfTouch)){
-                hero.physicsBody?.velocity=CGVector(dx: 0, dy: 0)
+                if ((hero.physicsBody?.velocity.dx)!>=0){
+                    hero.physicsBody?.velocity=CGVector(dx: 0, dy: (hero.physicsBody?.velocity.dy)!)
+                }
             }
             if (leftButton.contains(pointOfTouch)){
-                hero.physicsBody?.velocity=CGVector(dx: 0, dy: 0)
+                if ((hero.physicsBody?.velocity.dx)!<=0){
+                    hero.physicsBody?.velocity=CGVector(dx: 0, dy: (hero.physicsBody?.velocity.dy)!)
+                }
             }
         }
     }
@@ -77,6 +85,12 @@ class GameScene: SKScene {
         if(((hero.physicsBody?.velocity.dx)! <= 1) && ((hero.physicsBody?.velocity.dx)! >= -1)){
             hero.physicsBody?.velocity.dx = 0
         }
+        
+        meteor.update()
+        if (meteor.position.y-(meteor.size.height/2)<272){
+            meteor.removeFromParent()
+        }
+//        print(hero.physicsBody?.velocity.dy)
         /* Called before each frame is rendered */
         if(hero.physicsBody?.velocity.dx == 0){
             ind=0

@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             //            else
             if key.charactersIgnoringModifiers == UIKeyCommand.inputUpArrow || key.characters == "w" {
-                if (((hero.physicsBody?.velocity.dy)!<=0.1)&&((hero.physicsBody?.velocity.dy)! >= -0.1)){
+                if (((hero.physicsBody?.velocity.dy)!<=0.2)&&((hero.physicsBody?.velocity.dy)! >= -0.2)){
                     hero.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 900))
                 }
                 didHandleEvent = true
@@ -48,10 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for press in presses {
             guard let key = press.key else { continue }
             if key.charactersIgnoringModifiers == UIKeyCommand.inputLeftArrow || key.characters == "a" {
-                hero.physicsBody?.velocity=CGVector(dx: 0, dy: 0)
+                if ((hero.physicsBody?.velocity.dx)!<=0){
+                    hero.physicsBody?.velocity=CGVector(dx: 0, dy: (hero.physicsBody?.velocity.dy)!)
+                }
                 didHandleEvent = true
             } else if key.charactersIgnoringModifiers == UIKeyCommand.inputRightArrow || key.characters == "d" {
-                hero.physicsBody?.velocity=CGVector(dx: 0, dy: 0)
+                if ((hero.physicsBody?.velocity.dx)!>=0){
+                    hero.physicsBody?.velocity=CGVector(dx: 0, dy: (hero.physicsBody?.velocity.dy)!)
+                }
                 didHandleEvent = true
             }
             //            else if key.charactersIgnoringModifiers == UIKeyCommand.inputUpArrow || key.characters == "w" {

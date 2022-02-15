@@ -21,6 +21,7 @@ class GameScene: SKScene {
 //        self.addChild(background)
         
 //        meteor=Meteor(pos: CGPoint(x: 500,y: 500), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-50))
+        meteor.alpha = 0.5
         self.addChild(meteor)
         hero = (self.childNode(withName: "//hero") as! SKSpriteNode)
         rightButton = (self.childNode(withName: "//right") as! SKSpriteNode)

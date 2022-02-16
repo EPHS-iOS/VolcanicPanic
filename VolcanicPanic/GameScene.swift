@@ -11,9 +11,10 @@ class GameScene: SKScene {
     var upButton: SKSpriteNode!
     var ind=0
     var floorHeight: CGFloat!
+    var meteorSpawnTimer=0
     var walkSprites :[SKTexture] = [SKTexture]()
     var meteors :[Meteor] = [Meteor]()
-    var meteor=Meteor(pos: CGPoint(x: 500,y: UIScreen.main.bounds.height), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-3))
+//    var meteor=Meteor(pos: CGPoint(x: 500,y: UIScreen.main.bounds.height), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-3))
 //    var background = SKSpriteNode(imageNamed: "background")
     
     override func didMove(to view: SKView) {
@@ -23,8 +24,8 @@ class GameScene: SKScene {
 //        self.addChild(background)
         
 //        meteor=Meteor(pos: CGPoint(x: 500,y: 500), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-50))
-        meteor.alpha = 0.5
-        self.addChild(meteor)
+//        meteor.alpha = 0.5
+//        self.addChild(meteor)
         hero = (self.childNode(withName: "//hero") as! SKSpriteNode)
         rightButton = (self.childNode(withName: "//right") as! SKSpriteNode)
         leftButton = (self.childNode(withName: "//left") as! SKSpriteNode)
@@ -85,14 +86,38 @@ class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
+        if (meteorSpawnTimer%60==0){
+            let xVal=Int.random(in: 0..<Int(UIScreen.main.bounds.width))
+            let siz=Int.random(in: 50..<200)
+            let spd=Int.random(in: 1..<7)
+            meteors.append(Meteor(pos: CGPoint(x: CGFloat(xVal),y: UIScreen.main.bounds.height), siz: CGFloat(siz), ang: CGFloat(0), speed: CGFloat(-1*spd)))
+            meteors.last!.alpha=0.5
+            meteors.last!.physicsBody=SKPhysicsBody(texture: SKTexture(imageNamed: "meteor"), alphaThreshold: 0.5, size: CGSize(width:siz,height:siz))
+            meteors.last!.physicsBody?.affectedByGravity=false
+            self.addChild(meteors.last!)
+            meteorSpawnTimer=0
+        }
+        meteorSpawnTimer+=1
         if(((hero.physicsBody?.velocity.dx)! <= 1) && ((hero.physicsBody?.velocity.dx)! >= -1)){
             hero.physicsBody?.velocity.dx = 0
         }
-        
-        meteor.update()
-        if (meteor.position.y-(meteor.size.height/2)<floorHeight){
-            meteor.removeFromParent()
+        for m in meteors{
+            m.update()
+            if (m.physicsBody != nil){
+                for body in (m.physicsBody!.allContactedBodies()){
+                    if body==hero.physicsBody{
+                        hero.removeFromParent()
+                    }
+                }
+            }
+            if (m.position.y-(m.size.height/2)<floorHeight){
+                m.removeFromParent()
+            }
         }
+//        meteor.update()
+//        if (meteor.position.y-(meteor.size.height/2)<floorHeight){
+//            meteor.removeFromParent()
+//        }
 //        print(hero.physicsBody?.velocity.dy)
         /* Called before each frame is rendered */
         if(hero.physicsBody?.velocity.dx == 0){
@@ -105,13 +130,5 @@ class GameScene: SKScene {
             hero.texture = walkSprites[(ind-(ind%5))/5]
             ind+=1
         }
-        
-//         /* Grab current velocity */
-//        let velocityY = hero.physicsBody?.velocity.dy ?? 0
-//
-//         /* Check and cap vertical velocity */
-//         if velocityY > 400 {
-//             hero.physicsBody?.velocity.dy = 400
-//         }
     }
 }

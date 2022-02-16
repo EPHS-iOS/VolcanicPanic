@@ -86,10 +86,10 @@ class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
-        if (meteorSpawnTimer%60==0){
-            let xVal=Int.random(in: 0..<Int(UIScreen.main.bounds.width))
+        if (meteorSpawnTimer%30==0){
+            let xVal=Int.random(in: 0..<Int(self.frame.width))
             let siz=Int.random(in: 50..<200)
-            let spd=Int.random(in: 1..<7)
+            let spd=Int.random(in: 3..<7)
             meteors.append(Meteor(pos: CGPoint(x: CGFloat(xVal),y: UIScreen.main.bounds.height), siz: CGFloat(siz), ang: CGFloat(0), speed: CGFloat(-1*spd)))
             meteors.last!.alpha=0.5
             meteors.last!.physicsBody=SKPhysicsBody(texture: SKTexture(imageNamed: "meteor"), alphaThreshold: 0.5, size: CGSize(width:siz,height:siz))
@@ -106,7 +106,12 @@ class GameScene: SKScene {
             if (m.physicsBody != nil){
                 for body in (m.physicsBody!.allContactedBodies()){
                     if body==hero.physicsBody{
-                        hero.removeFromParent()
+                        if let view = self.view {
+                            if let scene = EndScreen(fileNamed:"EndScreen") {
+                                scene.scaleMode = .aspectFit
+                                view.presentScene(scene)
+                            }
+                        }
                     }
                 }
             }

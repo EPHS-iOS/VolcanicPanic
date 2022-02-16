@@ -13,36 +13,42 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if UIDevice.current.userInterfaceIdiom == .phone{
-                if let scene = SKScene(fileNamed:"GameScenePhone") {
-                    //                        let skView = self.view as! SKView
-                    scene.scaleMode = .aspectFit
-                    view.presentScene(scene)
-                }
-            } else {
-                if let scene = GameScene(fileNamed:"GameScenePad") {
-                    //                        let skView = self.view as! SKView
-                    scene.scaleMode = .aspectFit
-                    view.presentScene(scene)
-                }
+            if let scene = MainMenu(fileNamed:"MainMenu") {
+                scene.scaleMode = .aspectFit
+                view.presentScene(scene)
             }
-            //            if let scene = SKScene(fileNamed: "GameScene") {
-            //                // Set the scale mode to scale to fit the window
-            //                scene.scaleMode = .aspectFit
-            //
-            //                // Present the scene
-            //                view.presentScene(scene)
-            //            }
-            //
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-            view.showsPhysics = true
         }
+            
+//        if let view = self.view as! SKView? {
+//            // Load the SKScene from 'GameScene.sks'
+//            if UIDevice.current.userInterfaceIdiom == .phone{
+//                if let scene = SKScene(fileNamed:"GameScenePhone") {
+//                    //                        let skView = self.view as! SKView
+//                    scene.scaleMode = .aspectFit
+//                    view.presentScene(scene)
+//                }
+//            } else {
+//                if let scene = GameScene(fileNamed:"GameScenePad") {
+//                    //                        let skView = self.view as! SKView
+//                    scene.scaleMode = .aspectFit
+//                    view.presentScene(scene)
+//                }
+//            }
+//            //            if let scene = SKScene(fileNamed: "GameScene") {
+//            //                // Set the scale mode to scale to fit the window
+//            //                scene.scaleMode = .aspectFit
+//            //
+//            //                // Present the scene
+//            //                view.presentScene(scene)
+//            //            }
+//            //
+//            view.ignoresSiblingOrder = true
+//
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//            view.showsPhysics = true
+//        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

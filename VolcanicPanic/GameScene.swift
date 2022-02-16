@@ -10,7 +10,9 @@ class GameScene: SKScene {
     var leftButton: SKSpriteNode!
     var upButton: SKSpriteNode!
     var ind=0
+    var floorHeight: CGFloat!
     var walkSprites :[SKTexture] = [SKTexture]()
+    var meteors :[Meteor] = [Meteor]()
     var meteor=Meteor(pos: CGPoint(x: 500,y: UIScreen.main.bounds.height), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-3))
 //    var background = SKSpriteNode(imageNamed: "background")
     
@@ -27,7 +29,7 @@ class GameScene: SKScene {
         rightButton = (self.childNode(withName: "//right") as! SKSpriteNode)
         leftButton = (self.childNode(withName: "//left") as! SKSpriteNode)
         upButton = (self.childNode(withName: "//up") as! SKSpriteNode)
-        
+        floorHeight = (self.childNode(withName: "//floor") as! SKSpriteNode).position.y+((self.childNode(withName: "//floor") as! SKSpriteNode).size.height)/2
         walkSprites.append(SKTexture(imageNamed: "walk0"))
         walkSprites.append(SKTexture(imageNamed: "walk1"))
         walkSprites.append(SKTexture(imageNamed: "walk2"))
@@ -88,7 +90,7 @@ class GameScene: SKScene {
         }
         
         meteor.update()
-        if (meteor.position.y-(meteor.size.height/2)<272){
+        if (meteor.position.y-(meteor.size.height/2)<floorHeight){
             meteor.removeFromParent()
         }
 //        print(hero.physicsBody?.velocity.dy)

@@ -12,6 +12,7 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     override func viewDidLoad() {
+//        defaults.setValue(0, forKey: "high")
         super.viewDidLoad()
         if let view = self.view as! SKView? {
             if let scene = MainMenu(fileNamed:"MainMenu") {

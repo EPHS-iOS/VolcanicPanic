@@ -59,9 +59,9 @@ class MainMenu: SKScene {
                     //
                     view.ignoresSiblingOrder = true
                     
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                    view.showsPhysics = true
+//                    view.showsFPS = true
+//                    view.showsNodeCount = true
+//                    view.showsPhysics = true
                 }
             }
         }

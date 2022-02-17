@@ -2,6 +2,8 @@ import SpriteKit
 import GameplayKit
 
 var hero: SKSpriteNode!
+var score: Int!
+var defaults=UserDefaults.standard
 
 class GameScene: SKScene {
 
@@ -14,6 +16,8 @@ class GameScene: SKScene {
     var meteorSpawnTimer=0
     var walkSprites :[SKTexture] = [SKTexture]()
     var meteors :[Meteor] = [Meteor]()
+    var scoreLabel: SKLabelNode!
+    
 //    var meteor=Meteor(pos: CGPoint(x: 500,y: UIScreen.main.bounds.height), siz: CGFloat(70), ang: CGFloat(0), speed: CGFloat(-3))
 //    var background = SKSpriteNode(imageNamed: "background")
     
@@ -31,6 +35,8 @@ class GameScene: SKScene {
         leftButton = (self.childNode(withName: "//left") as! SKSpriteNode)
         upButton = (self.childNode(withName: "//up") as! SKSpriteNode)
         floorHeight = (self.childNode(withName: "//floor") as! SKSpriteNode).position.y+((self.childNode(withName: "//floor") as! SKSpriteNode).size.height)/2
+        scoreLabel = (self.childNode(withName: "//score") as! SKLabelNode)
+        score=0
         walkSprites.append(SKTexture(imageNamed: "walk0"))
         walkSprites.append(SKTexture(imageNamed: "walk1"))
         walkSprites.append(SKTexture(imageNamed: "walk2"))
@@ -86,11 +92,13 @@ class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
+        score+=1
+        scoreLabel.text="Score: "+String(score)
         if (meteorSpawnTimer%30==0){
             let xVal=Int.random(in: 0..<Int(self.frame.width))
             let siz=Int.random(in: 50..<200)
             let spd=Int.random(in: 3..<7)
-            meteors.append(Meteor(pos: CGPoint(x: CGFloat(xVal),y: UIScreen.main.bounds.height), siz: CGFloat(siz), ang: CGFloat(0), speed: CGFloat(-1*spd)))
+            meteors.append(Meteor(pos: CGPoint(x: CGFloat(xVal),y: self.frame.height), siz: CGFloat(siz), ang: CGFloat(0), speed: CGFloat(-1*spd)))
             meteors.last!.alpha=0.5
             meteors.last!.physicsBody=SKPhysicsBody(texture: SKTexture(imageNamed: "meteor"), alphaThreshold: 0.5, size: CGSize(width:siz,height:siz))
             meteors.last!.physicsBody?.affectedByGravity=false
@@ -106,6 +114,9 @@ class GameScene: SKScene {
             if (m.physicsBody != nil){
                 for body in (m.physicsBody!.allContactedBodies()){
                     if body==hero.physicsBody{
+                        if defaults.integer(forKey: "high")<score{
+                            defaults.setValue(score, forKey: "high")
+                        }
                         if let view = self.view {
                             if let scene = EndScreen(fileNamed:"EndScreen") {
                                 scene.scaleMode = .aspectFit

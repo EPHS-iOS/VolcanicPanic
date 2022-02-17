@@ -11,6 +11,8 @@ class EndScreen: SKScene {
 
     var play: SKLabelNode!
     var title1: SKLabelNode!
+    var scoreL: SKLabelNode!
+    var highScoreL: SKLabelNode!
     
 
     override func didMove(to view: SKView) {
@@ -19,6 +21,14 @@ class EndScreen: SKScene {
         let middle=self.frame.width/2
         play = (self.childNode(withName: "play") as! SKLabelNode)
         title1 = (self.childNode(withName: "title1") as! SKLabelNode)
+        scoreL = (self.childNode(withName: "score") as! SKLabelNode)
+        highScoreL = (self.childNode(withName: "highScore") as! SKLabelNode)
+        highScoreL.text = "High Score: "+String(defaults.integer(forKey: "high"))
+        scoreL.text="Score: "+String(score)
+        scoreL.position.x=middle
+        scoreL.position.y=4*self.frame.height/6
+        highScoreL.position.x=middle
+        highScoreL.position.y=3*self.frame.height/6
         play.position.x=middle
         play.position.y=self.frame.height/4
         title1.position.x=middle
@@ -55,9 +65,9 @@ class EndScreen: SKScene {
                     //
                     view.ignoresSiblingOrder = true
                     
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                    view.showsPhysics = true
+//                    view.showsFPS = true
+//                    view.showsNodeCount = true
+//                    view.showsPhysics = true
                 }
             }
         }

@@ -157,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9D7E674B27B17F3E000AFF07 /* VolcanicPanic */ = {
+		9D7E674B27B17F3E000AFF07 /* Paper Man Adventures */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D7E677927B17F43000AFF07 /* Build configuration list for PBXNativeTarget "VolcanicPanic" */;
+			buildConfigurationList = 9D7E677927B17F43000AFF07 /* Build configuration list for PBXNativeTarget "Paper Man Adventures" */;
 			buildPhases = (
 				9D7E674827B17F3E000AFF07 /* Sources */,
 				9D7E674927B17F3E000AFF07 /* Frameworks */,
@@ -169,7 +169,7 @@
 			);
 			dependencies = (
 			);
-			name = VolcanicPanic;
+			name = "Paper Man Adventures";
 			productName = VolcanicPanic;
 			productReference = 9D7E674C27B17F3E000AFF07 /* Paper Man Adventures.app */;
 			productType = "com.apple.product-type.application";
@@ -246,7 +246,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D7E674B27B17F3E000AFF07 /* VolcanicPanic */,
+				9D7E674B27B17F3E000AFF07 /* Paper Man Adventures */,
 				9D7E676427B17F43000AFF07 /* VolcanicPanicTests */,
 				9D7E676E27B17F43000AFF07 /* VolcanicPanicUITests */,
 			);
@@ -322,12 +322,12 @@
 /* Begin PBXTargetDependency section */
 		9D7E676727B17F43000AFF07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9D7E674B27B17F3E000AFF07 /* VolcanicPanic */;
+			target = 9D7E674B27B17F3E000AFF07 /* Paper Man Adventures */;
 			targetProxy = 9D7E676627B17F43000AFF07 /* PBXContainerItemProxy */;
 		};
 		9D7E677127B17F43000AFF07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9D7E674B27B17F3E000AFF07 /* VolcanicPanic */;
+			target = 9D7E674B27B17F3E000AFF07 /* Paper Man Adventures */;
 			targetProxy = 9D7E677027B17F43000AFF07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -476,7 +476,7 @@
 				CODE_SIGN_ENTITLEMENTS = VolcanicPanic/VolcanicPanic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 883DK65VTV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
@@ -491,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ephs2022.volcanicPanic;
 				PRODUCT_NAME = "Paper Man Adventures";
 				SUPPORTS_MACCATALYST = YES;
@@ -509,7 +509,7 @@
 				CODE_SIGN_ENTITLEMENTS = VolcanicPanic/VolcanicPanic.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 883DK65VTV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
@@ -524,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ephs2022.volcanicPanic;
 				PRODUCT_NAME = "Paper Man Adventures";
 				SUPPORTS_MACCATALYST = YES;
@@ -618,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D7E677927B17F43000AFF07 /* Build configuration list for PBXNativeTarget "VolcanicPanic" */ = {
+		9D7E677927B17F43000AFF07 /* Build configuration list for PBXNativeTarget "Paper Man Adventures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D7E677A27B17F43000AFF07 /* Debug */,

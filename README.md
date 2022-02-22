@@ -1,4 +1,5 @@
 # VolcanicPanic
+hi
 ## Version 1.2
 Added score and high score feature
 
